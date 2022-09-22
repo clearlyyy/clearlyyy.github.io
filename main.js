@@ -168,7 +168,7 @@ sign.position.x = -15;
 sign.position.y = 20;
 
 sign.rotation.x = 0;
-sign.rotation.y = 0.5;
+sign.rotation.y = 0.4;
 sign.rotation.z = 0;
 
 //textmesh
