@@ -102,7 +102,7 @@ function initText(scene, proj, x,y,z,rx,ry,rz,text, isCollideable = false) {
   //collider
   var textCollider
   if (isCollideable) {
-      const invisMat = new three.MeshPhongMaterial({visible: true})
+      const invisMat = new three.MeshPhongMaterial({visible: false})
       var textCollidergeom = new three.BoxGeometry(12, 2.5, 3);
       textCollider = new three.Mesh(
           textCollidergeom,
@@ -213,7 +213,7 @@ const onMouseMove = (event) => {
     //if (intersects[0].object.id > 40 && intersects[0].object.id != 828) {
     //  intersects[0].object.position.set(intersects[0].object.position.x, intersects[0].object.position.y, intersects[0].object.position.z +0.1 );
     //}
-    if (intersects[0].object.id == 23 ) {
+    if (intersects[0].object.id == 20 ) {
       enlargeName = true;
       document.getElementById("point").style.cursor = "pointer";     
     }
@@ -226,23 +226,23 @@ const onMouseMove = (event) => {
       enlargeController = false;
       enlargeClicker = false;
     }
-    if (intersects[0].object.id == 25) {
+    if (intersects[0].object.id == 22) {
       enlargeSfmlGUI = true;
       document.getElementById("point").style.cursor = "pointer";  
     }
-    if (intersects[0].object.id == 26) {
+    if (intersects[0].object.id == 23) {
       enlargeSeaside = true;
       document.getElementById("point").style.cursor = "pointer";  
     }
-    if (intersects[0].object.id == 27) {
+    if (intersects[0].object.id == 24) {
       enlargeController = true;
       document.getElementById("point").style.cursor = "pointer";  
     }
-    if (intersects[0].object.id == 28) {
+    if (intersects[0].object.id == 25) {
       enlargeClicker = true;
       document.getElementById("point").style.cursor = "pointer";  
     }
-    if (intersects[0].object.id == 828) {
+    if (intersects[0].object.id == 825) {
       enlargeTwitter = true;
       document.getElementById("point").style.cursor = "pointer";  
     }
@@ -259,22 +259,22 @@ const onMouseClick = (event) => {
   raycaster.setFromCamera(pointer, camera);
   const intersects = raycaster.intersectObjects(scene.children);
   if (intersects.length > 0) {
-    if (intersects[0].object.id == 23) {
+    if (intersects[0].object.id == 20) {
       window.open("https://github.com/clearlyyy");
     }
-    else if (intersects[0].object.id == 25) {
+    else if (intersects[0].object.id == 22) {
       window.open("https://github.com/clearlyyy/sfml-gui")
     }
-    else if (intersects[0].object.id == 26) {
+    else if (intersects[0].object.id == 23) {
       window.open("https://github.com/SeasideRoleplay")
     }
-    else if (intersects[0].object.id == 27) {
+    else if (intersects[0].object.id == 24) {
       window.open("https://github.com/clearlyyy/Controller-Tester")
     }
-    else if (intersects[0].object.id == 28) {
+    else if (intersects[0].object.id == 25) {
       window.open("https://github.com/clearlyyy/clear-clicker")
     }
-    else if (intersects[0].object.id == 828) {
+    else if (intersects[0].object.id == 825) {
       window.open("https://twitter.com/devclearly")
     }
     console.log(intersects[0].object.id);   
@@ -399,7 +399,7 @@ scene.add(clickerDesc2);
   function TextBoundingBox(scene, width = 14)
   {
       let TextCollider2
-       var invisMater = new three.MeshPhongMaterial({visible: true})
+       var invisMater = new three.MeshPhongMaterial({visible: false})
        var textCollidergeom = new three.BoxGeometry(width, 2.5, 3);
        TextCollider2 = new three.Mesh(
            textCollidergeom,
