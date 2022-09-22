@@ -1,0 +1,271 @@
+{
+    "preParticles": 500,
+    "integrationType": "EULER",
+    "emitters": [
+      {
+        "id": "51ca9450-3d8b-11e9-a1e8-4785d9606b75",
+        "totalEmitTimes": null,
+        "life": null,
+        "cache": { "totalEmitTimes": null, "life": null },
+        "rate": {
+          "particlesMin": 1,
+          "particlesMax": 1,
+          "perSecondMin": 0.0001,
+          "perSecondMax": 0.001
+        },
+        "position": { "x": -22, "y": 16.6, "z": 3 },
+        "rotation": { "x": 0, "y": 0, "z": 0 },
+        "initializers": [
+          {
+            "id": "51ca9451-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "Mass",
+            "properties": { "min": 100, "max": 200, "isEnabled": true }
+          },
+          {
+            "id": "51ca9452-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "Life",
+            "properties": { "min": 0.7, "max": 0.9, "isEnabled": true }
+          },
+          {
+            "id": "51ca9453-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "BodySprite",
+            "properties": {
+              "texture": "Box.png",
+              "isEnabled": true
+            }
+          },
+          {
+            "id": "51ca9454-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "Radius",
+            "properties": { "width": 2, "height": 2, "isEnabled": true }
+          },
+          {
+            "id": "51ca9455-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "RadialVelocity",
+            "properties": {
+              "radius": 2.2,
+              "x": 0,
+              "y": 0.5,
+              "z": 0,
+              "theta": 900,
+              "isEnabled": true
+            }
+          }
+        ],
+        "behaviours": [
+          {
+            "id": "51ca9456-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "Alpha",
+            "properties": {
+              "alphaA": 255,
+              "alphaB": 255,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          },
+          {
+            "id": "51ca9457-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "Color",
+            "properties": {
+              "colorA": "#002a4f",
+              "colorB": "#0029FF",
+              "life": null,
+              "easing": "easeOutCubic"
+            }
+          },
+          {
+            "id": "51ca9458-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "Scale",
+            "properties": {
+              "scaleA": 0.8,
+              "scaleB": 0.8,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          },
+          {
+            "id": "51ca9459-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "Force",
+            "properties": {
+              "fx": -22,
+              "fy": -10,
+              "fz": 0,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          },
+          {
+            "id": "51ca945a-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "Rotate",
+            "properties": {
+              "x": 0,
+              "y": 0,
+              "z": 0,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          },
+          {
+            "id": "51ca945b-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "RandomDrift",
+            "properties": {
+              "driftX": 0,
+              "driftY": 0,
+              "driftZ": 0,
+              "delay": 0,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          },
+          {
+            "id": "51ca945c-3d8b-11e9-a1e8-4785d9606b75",
+            "type": "Spring",
+            "properties": {
+              "x": 0,
+              "y": 0,
+              "z": 0,
+              "spring": 0.01,
+              "friction": 2222,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          }
+          
+        ],
+        "emitterBehaviours": []
+      },
+      {
+        "id": "51ca9450-3d8b-11e9-a1e8-4785d9606b65",
+        "totalEmitTimes": null,
+        "life": null,
+        "cache": { "totalEmitTimes": null, "life": null },
+        "rate": {
+          "particlesMin": 1,
+          "particlesMax": 1,
+          "perSecondMin": 0.0001,
+          "perSecondMax": 0.001
+        },
+        "position": { "x": -9, "y": 16.6, "z": -4 },
+        "rotation": { "x": 0, "y": 0, "z": 0 },
+        "initializers": [
+          {
+            "id": "51ca9451-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "Mass",
+            "properties": { "min": 100, "max": 200, "isEnabled": true }
+          },
+          {
+            "id": "51ca9452-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "Life",
+            "properties": { "min": 0.7, "max": 0.9, "isEnabled": true }
+          },
+          {
+            "id": "51ca9453-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "BodySprite",
+            "properties": {
+              "texture": "Box.png",
+              "isEnabled": true
+            }
+          },
+          {
+            "id": "51ca9454-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "Radius",
+            "properties": { "width": 2, "height": 2, "isEnabled": true }
+          },
+          {
+            "id": "51ca9455-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "RadialVelocity",
+            "properties": {
+              "radius": 2.2,
+              "x": 0,
+              "y": 0.5,
+              "z": 0,
+              "theta": 900,
+              "isEnabled": true
+            }
+          }
+        ],
+        "behaviours": [
+          {
+            "id": "51ca9456-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "Alpha",
+            "properties": {
+              "alphaA": 255,
+              "alphaB": 255,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          },
+          {
+            "id": "51ca9457-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "Color",
+            "properties": {
+              "colorA": "#002a4f",
+              "colorB": "#0029FF",
+              "life": null,
+              "easing": "easeOutCubic"
+            }
+          },
+          {
+            "id": "51ca9458-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "Scale",
+            "properties": {
+              "scaleA": 0.8,
+              "scaleB": 0.8,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          },
+          {
+            "id": "51ca9459-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "Force",
+            "properties": {
+              "fx": -7,
+              "fy": -10,
+              "fz": 0,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          },
+          {
+            "id": "51ca945a-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "Rotate",
+            "properties": {
+              "x": 0,
+              "y": 0,
+              "z": 0,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          },
+          {
+            "id": "51ca945b-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "RandomDrift",
+            "properties": {
+              "driftX": 0,
+              "driftY": 0,
+              "driftZ": 0,
+              "delay": 0,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          },
+          {
+            "id": "51ca945c-3d8b-11e9-a1e8-4785d9606b65",
+            "type": "Spring",
+            "properties": {
+              "x": 0,
+              "y": 0,
+              "z": 0,
+              "spring": 0.01,
+              "friction": 2222,
+              "life": null,
+              "easing": "easeLinear"
+            }
+          }
+          
+        ],
+        "emitterBehaviours": []
+      }
+    ]
+  }
+  
