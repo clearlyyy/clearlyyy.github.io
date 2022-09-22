@@ -57,7 +57,7 @@ composer.addPass(bloomPass);
 
 
 // returns green outline material.
-export function getMaterial(geom, thickness = 0.2) {
+function getMaterial(geom, thickness = 0.2) {
   return new three.ShaderMaterial({
     uniforms: {
       size: {
