@@ -4,7 +4,7 @@ import {RenderPass} from 'https://cdn.skypack.dev/three@0.132.0/examples/jsm/pos
 import {EffectComposer} from 'https://cdn.skypack.dev/three@0.132.0/examples/jsm/postprocessing/EffectComposer';
 import {UnrealBloomPass} from 'https://cdn.skypack.dev/three@0.132.0/examples/jsm/postprocessing/UnrealBloomPass';
 import json from "./particles.json" assert {type: "json"};
-import { FontLoader } from 'FontLoader';
+import { FontLoader } from 'three';
 import { TextGeometry } from 'three';
 //import * as Proj from './ProjOBJ.js';
 //import Stats from 'three/examples/jsm/libs/stats.module'
@@ -104,7 +104,7 @@ function initText(scene, proj, x,y,z,rx,ry,rz,text, isCollideable = false) {
   //collider
   var textCollider
   if (isCollideable) {
-      const invisMat = new three.MeshPhongMaterial({visible: false})
+      const invisMat = new three.MeshPhongMaterial({visible: true})
       var textCollidergeom = new three.BoxGeometry(12, 2.5, 3);
       textCollider = new three.Mesh(
           textCollidergeom,
