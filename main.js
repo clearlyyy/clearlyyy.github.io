@@ -675,52 +675,52 @@ function animate() {
   cube.rotation.z += 0.01;
   onMouseMove;
 
-  sfmlTextBoundingBox.position.x =  proj.position.x-11;
-  sfmlTextBoundingBox.position.y =  proj.position.y+12;
-  sfmlTextBoundingBox.position.z =  proj.position.z+6;
+  //sfmlTextBoundingBox.position.x =  proj.position.x-11;
+  //sfmlTextBoundingBox.position.y =  proj.position.y+12;
+  //sfmlTextBoundingBox.position.z =  proj.position.z+6;
+//
+  //sfmlTextBoundingBox.rotation.x =  proj.rotation.x;
+  //sfmlTextBoundingBox.rotation.y =  proj.rotation.y;
+  //sfmlTextBoundingBox.rotation.z =  proj.rotation.z;
+  //
+  //seaSideBoundingBox.position.x =  proj.position.x-6;
+  //seaSideBoundingBox.position.y =  proj.position.y+7;
+  //seaSideBoundingBox.position.z =  proj.position.z+10;
+//
+  //seaSideBoundingBox.rotation.x =  proj.rotation.x;
+  //seaSideBoundingBox.rotation.y =  proj.rotation.y;
+  //seaSideBoundingBox.rotation.z =  proj.rotation.z;
+//
+  //controllerBoundingBox.position.x =  proj.position.x-6;
+  //controllerBoundingBox.position.y =  proj.position.y+2;
+  //controllerBoundingBox.position.z =  proj.position.z+10;
+//
+  //controllerBoundingBox.rotation.x =  proj.rotation.x;
+  //controllerBoundingBox.rotation.y =  proj.rotation.y;
+  //controllerBoundingBox.rotation.z =  proj.rotation.z;
+//
+  //clickerBoundingBox.position.x =  proj.position.x-9;
+  //clickerBoundingBox.position.y =  proj.position.y-2.4;
+  //clickerBoundingBox.position.z =  proj.position.z+10;
+//
+  //clickerBoundingBox.rotation.x =  proj.rotation.x;
+  //clickerBoundingBox.rotation.y =  proj.rotation.y;
+  //clickerBoundingBox.rotation.z =  proj.rotation.z;
 
-  sfmlTextBoundingBox.rotation.x =  proj.rotation.x;
-  sfmlTextBoundingBox.rotation.y =  proj.rotation.y;
-  sfmlTextBoundingBox.rotation.z =  proj.rotation.z;
-  
-  seaSideBoundingBox.position.x =  proj.position.x-6;
-  seaSideBoundingBox.position.y =  proj.position.y+7;
-  seaSideBoundingBox.position.z =  proj.position.z+10;
+  //textCollider.position.x = sign.position.x+1;
+  //textCollider.position.y = sign.position.y;
+  //textCollider.position.z = sign.position.z+2;
+//
+  //textCollider.rotation.x = sign.rotation.x;
+  //textCollider.rotation.y = sign.rotation.y;
+  //textCollider.rotation.z = sign.rotation.z;
 
-  seaSideBoundingBox.rotation.x =  proj.rotation.x;
-  seaSideBoundingBox.rotation.y =  proj.rotation.y;
-  seaSideBoundingBox.rotation.z =  proj.rotation.z;
-
-  controllerBoundingBox.position.x =  proj.position.x-6;
-  controllerBoundingBox.position.y =  proj.position.y+2;
-  controllerBoundingBox.position.z =  proj.position.z+10;
-
-  controllerBoundingBox.rotation.x =  proj.rotation.x;
-  controllerBoundingBox.rotation.y =  proj.rotation.y;
-  controllerBoundingBox.rotation.z =  proj.rotation.z;
-
-  clickerBoundingBox.position.x =  proj.position.x-9;
-  clickerBoundingBox.position.y =  proj.position.y-2.4;
-  clickerBoundingBox.position.z =  proj.position.z+10;
-
-  clickerBoundingBox.rotation.x =  proj.rotation.x;
-  clickerBoundingBox.rotation.y =  proj.rotation.y;
-  clickerBoundingBox.rotation.z =  proj.rotation.z;
-
-  textCollider.position.x = sign.position.x+1;
-  textCollider.position.y = sign.position.y;
-  textCollider.position.z = sign.position.z+2;
-
-  textCollider.rotation.x = sign.rotation.x;
-  textCollider.rotation.y = sign.rotation.y;
-  textCollider.rotation.z = sign.rotation.z;
-
-  if (textmesh) {scaleUpdate(enlargeName, textmesh);}
-  if (sfmlText){scaleUpdate(enlargeSfmlGUI, sfmlText);}
-  if (seaSideText){scaleUpdate(enlargeSeaside, seaSideText);}
-  if (controllerText){scaleUpdate(enlargeController, controllerText);}
-  if (clickerText){scaleUpdate(enlargeClicker, clickerText);}
-  if (twitterText){scaleUpdate(enlargeTwitter, twitterText);}
+  //if (textmesh) {scaleUpdate(enlargeName, textmesh);}
+  //if (sfmlText){scaleUpdate(enlargeSfmlGUI, sfmlText);}
+  //if (seaSideText){scaleUpdate(enlargeSeaside, seaSideText);}
+  //if (controllerText){scaleUpdate(enlargeController, controllerText);}
+  //if (clickerText){scaleUpdate(enlargeClicker, clickerText);}
+  //if (twitterText){scaleUpdate(enlargeTwitter, twitterText);}
 
   for (var i = 0; i < 3; i++) {
     Cones[i].rotation.y += 0.01;
