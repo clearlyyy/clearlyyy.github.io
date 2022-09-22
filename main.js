@@ -30,7 +30,7 @@ const camera = new three.PerspectiveCamera(90, window.innerWidth / window.innerH
 
 
 const renderer = new three.WebGLRenderer({
-  canvas: document.querySelector('#bg'),
+  canvas: document.querySelector('#bg'), precision: 'highp'
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -713,9 +713,9 @@ sfmlTextBoundingBox.position.x =  proj.position.x-11;
 
 
 
-bloomPass.strength = 0.5 //4
-camera.position.z = 50 // 50
-camera.fov = 60; //10
+bloomPass.strength = 4
+camera.position.z = 300
+camera.fov = 10;
 document.getElementById("point").click();
 camera.updateProjectionMatrix();
 
@@ -723,80 +723,80 @@ function animate() {
   requestAnimationFrame(() => animate());
   
   
-  ////intro bloom anim
-  //if (bloomAnim)
-  //{
-  //  if (bloomPass.strength <= 0.5)
-  //  {
-  //    bloomAnim = false;
-  //  }
-  //  bloomPass.strength -= 0.02;
-  //}
-  //if (camanim) {
-  //  camera.fov += 0.18;
-  //  //console.log(camera.fov)
-  //  camera.updateProjectionMatrix();
-  //  if (camera.position.z >= 80)
-  //  {
-  //    camera.position.z -= 1;
-  //  }
-  //  if (camera.position.z <=80)
-  //  {
-  //    camera.position.z -= 0.4;
-  //  }
-  //  if (camera.position.z <= 60)
-  //  {
-  //    camanim = false;
-  //  }
-  //}
-  ////
+  //intro bloom anim
+  if (bloomAnim)
+  {
+    if (bloomPass.strength <= 0.5)
+    {
+      bloomAnim = false;
+    }
+    bloomPass.strength -= 0.02;
+  }
+  if (camanim) {
+    camera.fov += 0.18;
+    //console.log(camera.fov)
+    camera.updateProjectionMatrix();
+    if (camera.position.z >= 80)
+    {
+      camera.position.z -= 1;
+    }
+    if (camera.position.z <=80)
+    {
+      camera.position.z -= 0.4;
+    }
+    if (camera.position.z <= 60)
+    {
+      camanim = false;
+    }
+  }
+  //
 
 
-  //cube.rotation.x += 0.01;
-  //cube.rotation.y += 0.005;
-  //cube.rotation.z += 0.01;
-  //onMouseMove;
-//
-  //
-//
-  //textCollider.position.x = sign.position.x+1;
-  //textCollider.position.y = sign.position.y;
-  //textCollider.position.z = sign.position.z+2;
-//
-  //textCollider.rotation.x = sign.rotation.x;
-  //textCollider.rotation.y = sign.rotation.y;
-  //textCollider.rotation.z = sign.rotation.z;
-//
-  //if (textmesh) {scaleUpdate(enlargeName, textmesh);}
-  //if (sfmlText){scaleUpdate(enlargeSfmlGUI, sfmlText);}
-  //if (seaSideText){scaleUpdate(enlargeSeaside, seaSideText);}
-  //if (controllerText){scaleUpdate(enlargeController, controllerText);}
-  //if (clickerText){scaleUpdate(enlargeClicker, clickerText);}
-  //if (twitterText){scaleUpdate(enlargeTwitter, twitterText);}
-//
-  //for (var i = 0; i < 3; i++) {
-  //  Cones[i].rotation.y += 0.01;
-  //  Cones2[i].rotation.y += 0.01;
-  //}
-//
-  ////Animate
-  //for (var i = 0; i < 3; i++) {
-  //  if (Cones[i].position.y > 16) {
-  //    moveSpeed = -0.01
-  //  }
-  //  if (Cones[i].position.y < 14) {
-  //    moveSpeed = 0.01
-  //  }
-  //  Cones[i].position.y += moveSpeed;
-  //  Cones2[i].position.y += moveSpeed;
-  //}
-  //if (textmesh) {
-  //textmesh.position.x = sign.position.x - 7.3;
-  //textmesh.position.y = sign.position.y - 1.4;
-  //textmesh.position.z = sign.position.z + 2.5;
-  //}
-  //
-  //sign.position.y += moveSpeed;
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.005;
+  cube.rotation.z += 0.01;
+  onMouseMove;
+
+  
+
+  textCollider.position.x = sign.position.x+1;
+  textCollider.position.y = sign.position.y;
+  textCollider.position.z = sign.position.z+2;
+
+  textCollider.rotation.x = sign.rotation.x;
+  textCollider.rotation.y = sign.rotation.y;
+  textCollider.rotation.z = sign.rotation.z;
+
+  if (textmesh) {scaleUpdate(enlargeName, textmesh);}
+  if (sfmlText){scaleUpdate(enlargeSfmlGUI, sfmlText);}
+  if (seaSideText){scaleUpdate(enlargeSeaside, seaSideText);}
+  if (controllerText){scaleUpdate(enlargeController, controllerText);}
+  if (clickerText){scaleUpdate(enlargeClicker, clickerText);}
+  if (twitterText){scaleUpdate(enlargeTwitter, twitterText);}
+
+  for (var i = 0; i < 3; i++) {
+    Cones[i].rotation.y += 0.01;
+    Cones2[i].rotation.y += 0.01;
+  }
+
+  //Animate
+  for (var i = 0; i < 3; i++) {
+    if (Cones[i].position.y > 16) {
+      moveSpeed = -0.01
+    }
+    if (Cones[i].position.y < 14) {
+      moveSpeed = 0.01
+    }
+    Cones[i].position.y += moveSpeed;
+    Cones2[i].position.y += moveSpeed;
+  }
+  if (textmesh) {
+  textmesh.position.x = sign.position.x - 7.3;
+  textmesh.position.y = sign.position.y - 1.4;
+  textmesh.position.z = sign.position.z + 2.5;
+  }
+  
+  sign.position.y += moveSpeed;
   //nebula.update();
   composer.render(scene, camera);
 }
