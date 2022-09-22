@@ -619,35 +619,35 @@ function createCube(x,y,z, rot=0)
   return cube;
 }
 //INIT WALLS ->
-//for (var i = 0; i < 22; i++)
-//{
-//  for (var j = 0; j < 11; j++)
-//  {
-//    createCube(j*10-50,-27,i*10-28);
-//  }
-//}
-//
-//for (var i = 0; i < 11; i++)
-//{
-//  for (var j = 0; j < 10; j++)
-//  {
-//    createCube(j*10-50,i*10-27,-37);
-//  }
-//}
-//for (var i = 0; i < 10; i++)
-//{
-//  for (var j = 0; j < 22; j++)
-//  {
-//    createCube(-50.1,i*10-27,j*10-50);
-//  }
-//}
-//for (var i = 0; i < 10; i++)
-//{
-//  for (var j = 0; j < 22; j++)
-//  {
-//    createCube(50.1,i*10-27,j*10-50);
-//  }
-//}
+for (var i = 0; i < 22; i++)
+{
+  for (var j = 0; j < 11; j++)
+  {
+    createCube(j*10-50,-27,i*10-28);
+  }
+}
+
+for (var i = 0; i < 11; i++)
+{
+  for (var j = 0; j < 10; j++)
+  {
+    createCube(j*10-50,i*10-27,-37);
+  }
+}
+for (var i = 0; i < 10; i++)
+{
+  for (var j = 0; j < 22; j++)
+  {
+    createCube(-50.1,i*10-27,j*10-50);
+  }
+}
+for (var i = 0; i < 10; i++)
+{
+  for (var j = 0; j < 22; j++)
+  {
+    createCube(50.1,i*10-27,j*10-50);
+  }
+}
 let twitterBoundingBox = TextBoundingBox(scene, 18);
 twitterBoundingBox.position.set(-32,-15,10)
 twitterBoundingBox.rotation.set(desc.rotation.x, desc.rotation.y,desc.rotation.z)
