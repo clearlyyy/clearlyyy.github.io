@@ -99,8 +99,6 @@ function initTextMesh(scene, proj, x,y,z,rx,ry,rz,text, textSize) {
 
 function initText(scene, proj, x,y,z,rx,ry,rz,text, isCollideable = false) {
   //let text = text;
-  
-  
   //collider
   var textCollider
   if (isCollideable) {
@@ -401,7 +399,7 @@ scene.add(clickerDesc2);
   function TextBoundingBox(scene, width = 14)
   {
       let TextCollider2
-       var invisMater = new three.MeshPhongMaterial({visible: false})
+       var invisMater = new three.MeshPhongMaterial({visible: true})
        var textCollidergeom = new three.BoxGeometry(width, 2.5, 3);
        TextCollider2 = new three.Mesh(
            textCollidergeom,
