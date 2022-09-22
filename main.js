@@ -252,106 +252,106 @@ proj.position.x = 30;
          proj.rotation.x = 0;
          proj.rotation.y = -0.45; //2.4 -0.6
          proj.rotation.z = 0;
-var projectHeaderText = Proj.initTextMesh(scene, proj,
-  proj.position.x-9.5,
-  proj.position.y+15,
-  proj.position.z+2,
-  proj.rotation.x,
-  proj.rotation.y,
-  0,
-  'Projects',
-  1.8         
-  );
-var sfmlDesc = Proj.initTextMesh(scene, proj,
-    proj.position.x-15,
-    proj.position.y+9.5,
-    proj.position.z+3,
-    proj.rotation.x,
-    proj.rotation.y,
-    0,
-    'Lightweight, Powerful GUI framework',
-    0.6          
-    );
-scene.add(sfmlDesc);
-var sfmlDesc2 = Proj.initTextMesh(scene, proj,
-  proj.position.x-15,
-  proj.position.y+8.5,
-  proj.position.z+3,
-  proj.rotation.x,
-  proj.rotation.y,
-  0,
-  'made to be used with SFML in C++.',
-  0.6         
-  );
-scene.add(sfmlDesc2);
-
-var seaSideDesc = Proj.initTextMesh(scene, proj,
-  proj.position.x-15,
-  proj.position.y+4.5,
-  proj.position.z+3,
-  proj.rotation.x,
-  proj.rotation.y,
-  0,
-  'Grand Theft Auto 5 Modded Server,',
-  0.6         
-  );
-scene.add(seaSideDesc);
-var seaSideDesc2 = Proj.initTextMesh(scene, proj,
-  proj.position.x-15,
-  proj.position.y+3.5,
-  proj.position.z+3,
-  proj.rotation.x,
-  proj.rotation.y,
-  0,
-  'Created with Lua and Javascript',
-  0.6         
-  );
-scene.add(seaSideDesc2);
-
-var controllerDesc = Proj.initTextMesh(scene, proj,
-  proj.position.x-15,
-  proj.position.y+0,
-  proj.position.z+3,
-  proj.rotation.x,
-  proj.rotation.y,
-  0,
-  'Program made to Test XINPUT Devices,',
-  0.6         
-  );
-scene.add(controllerDesc);
-var controllerDesc2 = Proj.initTextMesh(scene, proj,
-  proj.position.x-15,
-  proj.position.y-1,
-  proj.position.z+3,
-  proj.rotation.x,
-  proj.rotation.y,
-  0,
-  'Made using /sfml-gui, in C++',
-  0.6         
-  );
-scene.add(controllerDesc2);
-var clickerDesc = Proj.initTextMesh(scene, proj,
-  proj.position.x-15,
-  proj.position.y-4.5,
-  proj.position.z+3,
-  proj.rotation.x,
-  proj.rotation.y,
-  0,
-  'Powerful AutoClicker With Terminal Colors',
-  0.6         
-  );
-scene.add(clickerDesc);
-var clickerDesc2 = Proj.initTextMesh(scene, proj,
-  proj.position.x-15,
-  proj.position.y-5.5,
-  proj.position.z+3,
-  proj.rotation.x,
-  proj.rotation.y,
-  0,
-  'And Range-Based CPS, made in C++ ',
-  0.6         
-  );
-scene.add(clickerDesc2);
+//var projectHeaderText = Proj.initTextMesh(scene, proj,
+//  proj.position.x-9.5,
+//  proj.position.y+15,
+//  proj.position.z+2,
+//  proj.rotation.x,
+//  proj.rotation.y,
+//  0,
+//  'Projects',
+//  1.8         
+//  );
+//var sfmlDesc = Proj.initTextMesh(scene, proj,
+//    proj.position.x-15,
+//    proj.position.y+9.5,
+//    proj.position.z+3,
+//    proj.rotation.x,
+//    proj.rotation.y,
+//    0,
+//    'Lightweight, Powerful GUI framework',
+//    0.6          
+//    );
+//scene.add(sfmlDesc);
+//var sfmlDesc2 = Proj.initTextMesh(scene, proj,
+//  proj.position.x-15,
+//  proj.position.y+8.5,
+//  proj.position.z+3,
+//  proj.rotation.x,
+//  proj.rotation.y,
+//  0,
+//  'made to be used with SFML in C++.',
+//  0.6         
+//  );
+//scene.add(sfmlDesc2);
+//
+//var seaSideDesc = Proj.initTextMesh(scene, proj,
+//  proj.position.x-15,
+//  proj.position.y+4.5,
+//  proj.position.z+3,
+//  proj.rotation.x,
+//  proj.rotation.y,
+//  0,
+//  'Grand Theft Auto 5 Modded Server,',
+//  0.6         
+//  );
+//scene.add(seaSideDesc);
+//var seaSideDesc2 = Proj.initTextMesh(scene, proj,
+//  proj.position.x-15,
+//  proj.position.y+3.5,
+//  proj.position.z+3,
+//  proj.rotation.x,
+//  proj.rotation.y,
+//  0,
+//  'Created with Lua and Javascript',
+//  0.6         
+//  );
+//scene.add(seaSideDesc2);
+//
+//var controllerDesc = Proj.initTextMesh(scene, proj,
+//  proj.position.x-15,
+//  proj.position.y+0,
+//  proj.position.z+3,
+//  proj.rotation.x,
+//  proj.rotation.y,
+//  0,
+//  'Program made to Test XINPUT Devices,',
+//  0.6         
+//  );
+//scene.add(controllerDesc);
+//var controllerDesc2 = Proj.initTextMesh(scene, proj,
+//  proj.position.x-15,
+//  proj.position.y-1,
+//  proj.position.z+3,
+//  proj.rotation.x,
+//  proj.rotation.y,
+//  0,
+//  'Made using /sfml-gui, in C++',
+//  0.6         
+//  );
+//scene.add(controllerDesc2);
+//var clickerDesc = Proj.initTextMesh(scene, proj,
+//  proj.position.x-15,
+//  proj.position.y-4.5,
+//  proj.position.z+3,
+//  proj.rotation.x,
+//  proj.rotation.y,
+//  0,
+//  'Powerful AutoClicker With Terminal Colors',
+//  0.6         
+//  );
+//scene.add(clickerDesc);
+//var clickerDesc2 = Proj.initTextMesh(scene, proj,
+//  proj.position.x-15,
+//  proj.position.y-5.5,
+//  proj.position.z+3,
+//  proj.rotation.x,
+//  proj.rotation.y,
+//  0,
+//  'And Range-Based CPS, made in C++ ',
+//  0.6         
+//  );
+//scene.add(clickerDesc2);
 
   function TextBoundingBox(scene, width = 14)
   {
@@ -463,41 +463,41 @@ let clickerText;
   desc.position.set(-29,-10,0);
   desc.rotation.set(0,0.4,0);
 
-  var DescText = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+7.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-    'Hi, Im Clearly. im a c++ Developer,',
-    0.9         
-    );
-  scene.add(DescText);
-  var DescText2 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+6,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-    'with 4+ years experience',
-    0.9         
-    );
-  scene.add(DescText2);
-  var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+4.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-    'in a multitude of languages and',
-    0.9         
-    );
-  scene.add(DescText3);
-  var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+3,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-    'and tools, Right now i mainly',
-    0.9         
-    );
-  scene.add(DescText3);
-  var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+1.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-    'focus on framework development ',
-    0.9         
-    );
-  scene.add(DescText3);
-  var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-    'and making games. Message me',
-    0.9         
-    );
-  scene.add(DescText4);
-  var DescText4 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y-1.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-    'if you need a developer!',
-    0.9         
-    );
-  scene.add(DescText4);
+  //var DescText = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+7.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+  //  'Hi, Im Clearly. im a c++ Developer,',
+  //  0.9         
+  //  );
+  //scene.add(DescText);
+  //var DescText2 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+6,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+  //  'with 4+ years experience',
+  //  0.9         
+  //  );
+  //scene.add(DescText2);
+  //var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+4.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+  //  'in a multitude of languages and',
+  //  0.9         
+  //  );
+  //scene.add(DescText3);
+  //var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+3,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+  //  'and tools, Right now i mainly',
+  //  0.9         
+  //  );
+  //scene.add(DescText3);
+  //var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+1.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+  //  'focus on framework development ',
+  //  0.9         
+  //  );
+  //scene.add(DescText3);
+  //var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+  //  'and making games. Message me',
+  //  0.9         
+  //  );
+  //scene.add(DescText4);
+  //var DescText4 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y-1.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+  //  'if you need a developer!',
+  //  0.9         
+  //  );
+  //scene.add(DescText4);
   let twitterText;
       Fontloader.load('Gameplay_Regular.json', function (font) {
           const tGeometry = new TextGeometry('twitter:  devclearly', {
@@ -515,11 +515,11 @@ let clickerText;
           twitterText.rotation.z =  desc.rotation.z;
           scene.add(twitterText);
       });
-  var DescText4 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y-8,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-    'check out some of my projects!',
-    0.9         
-    );
-  scene.add(DescText4);
+  //var DescText4 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y-8,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+  //  'check out some of my projects!',
+  //  0.9         
+  //  );
+  //scene.add(DescText4);
   window.addEventListener( 'resize', onWindowResize, false );
   
 function onWindowResize(){
