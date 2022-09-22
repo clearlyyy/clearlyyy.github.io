@@ -7,6 +7,7 @@ import json from "./particles.json" assert {type: "json"};
 import { FontLoader } from 'FontLoader';
 import { TextGeometry } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
 import * as Proj from './ProjOBJ.js';
+//import Stats from 'three/examples/jsm/libs/stats.module'
 
 
 
@@ -71,6 +72,50 @@ export function getMaterial(geom, thickness = 0.2) {
   });
 }
 
+function initTextMesh(scene, proj, x,y,z,rx,ry,rz,text, textSize) {
+  let textmesh;
+  const Fontloader = new FontLoader();
+  Fontloader.load('Gameplay_Regular.json', function (font) {
+      const tGeometry = new TextGeometry(text, {
+          font: font,
+      size: textSize,
+      height: textSize
+      });
+      textmesh = new three.Mesh(tGeometry, [
+          new three.MeshPhongMaterial({ emissive: 0x00ff00}),
+          new three.MeshPhongMaterial({ color: 0x00ff00})
+      ]);
+      textmesh.rotation.x = rx;
+      textmesh.rotation.y = ry;
+      textmesh.rotation.z = rz;
+      textmesh.position.x = x;
+      textmesh.position.y = y;
+      textmesh.position.z = z;
+      scene.add(textmesh);
+      return textmesh;
+  });
+  return textmesh;
+}
+
+function initText(scene, proj, x,y,z,rx,ry,rz,text, isCollideable = false) {
+  //let text = text;
+  
+  
+  //collider
+  var textCollider
+  if (isCollideable) {
+      const invisMat = new three.MeshPhongMaterial({visible: false})
+      var textCollidergeom = new three.BoxGeometry(12, 2.5, 3);
+      textCollider = new three.Mesh(
+          textCollidergeom,
+          invisMat
+      )
+      scene.add(textCollider);
+      
+  }
+  return textCollider;
+  
+}
 
 
 //ambient lighting
@@ -252,106 +297,106 @@ proj.position.x = 30;
          proj.rotation.x = 0;
          proj.rotation.y = -0.45; //2.4 -0.6
          proj.rotation.z = 0;
-//var projectHeaderText = Proj.initTextMesh(scene, proj,
-//  proj.position.x-9.5,
-//  proj.position.y+15,
-//  proj.position.z+2,
-//  proj.rotation.x,
-//  proj.rotation.y,
-//  0,
-//  'Projects',
-//  1.8         
-//  );
-//var sfmlDesc = Proj.initTextMesh(scene, proj,
-//    proj.position.x-15,
-//    proj.position.y+9.5,
-//    proj.position.z+3,
-//    proj.rotation.x,
-//    proj.rotation.y,
-//    0,
-//    'Lightweight, Powerful GUI framework',
-//    0.6          
-//    );
-//scene.add(sfmlDesc);
-//var sfmlDesc2 = Proj.initTextMesh(scene, proj,
-//  proj.position.x-15,
-//  proj.position.y+8.5,
-//  proj.position.z+3,
-//  proj.rotation.x,
-//  proj.rotation.y,
-//  0,
-//  'made to be used with SFML in C++.',
-//  0.6         
-//  );
-//scene.add(sfmlDesc2);
-//
-//var seaSideDesc = Proj.initTextMesh(scene, proj,
-//  proj.position.x-15,
-//  proj.position.y+4.5,
-//  proj.position.z+3,
-//  proj.rotation.x,
-//  proj.rotation.y,
-//  0,
-//  'Grand Theft Auto 5 Modded Server,',
-//  0.6         
-//  );
-//scene.add(seaSideDesc);
-//var seaSideDesc2 = Proj.initTextMesh(scene, proj,
-//  proj.position.x-15,
-//  proj.position.y+3.5,
-//  proj.position.z+3,
-//  proj.rotation.x,
-//  proj.rotation.y,
-//  0,
-//  'Created with Lua and Javascript',
-//  0.6         
-//  );
-//scene.add(seaSideDesc2);
-//
-//var controllerDesc = Proj.initTextMesh(scene, proj,
-//  proj.position.x-15,
-//  proj.position.y+0,
-//  proj.position.z+3,
-//  proj.rotation.x,
-//  proj.rotation.y,
-//  0,
-//  'Program made to Test XINPUT Devices,',
-//  0.6         
-//  );
-//scene.add(controllerDesc);
-//var controllerDesc2 = Proj.initTextMesh(scene, proj,
-//  proj.position.x-15,
-//  proj.position.y-1,
-//  proj.position.z+3,
-//  proj.rotation.x,
-//  proj.rotation.y,
-//  0,
-//  'Made using /sfml-gui, in C++',
-//  0.6         
-//  );
-//scene.add(controllerDesc2);
-//var clickerDesc = Proj.initTextMesh(scene, proj,
-//  proj.position.x-15,
-//  proj.position.y-4.5,
-//  proj.position.z+3,
-//  proj.rotation.x,
-//  proj.rotation.y,
-//  0,
-//  'Powerful AutoClicker With Terminal Colors',
-//  0.6         
-//  );
-//scene.add(clickerDesc);
-//var clickerDesc2 = Proj.initTextMesh(scene, proj,
-//  proj.position.x-15,
-//  proj.position.y-5.5,
-//  proj.position.z+3,
-//  proj.rotation.x,
-//  proj.rotation.y,
-//  0,
-//  'And Range-Based CPS, made in C++ ',
-//  0.6         
-//  );
-//scene.add(clickerDesc2);
+var projectHeaderText = initTextMesh(scene, proj,
+  proj.position.x-9.5,
+  proj.position.y+15,
+  proj.position.z+2,
+  proj.rotation.x,
+  proj.rotation.y,
+  0,
+  'Projects',
+  1.8         
+  );
+var sfmlDesc = initTextMesh(scene, proj,
+    proj.position.x-15,
+    proj.position.y+9.5,
+    proj.position.z+3,
+    proj.rotation.x,
+    proj.rotation.y,
+    0,
+    'Lightweight, Powerful GUI framework',
+    0.6          
+    );
+scene.add(sfmlDesc);
+var sfmlDesc2 = initTextMesh(scene, proj,
+  proj.position.x-15,
+  proj.position.y+8.5,
+  proj.position.z+3,
+  proj.rotation.x,
+  proj.rotation.y,
+  0,
+  'made to be used with SFML in C++.',
+  0.6         
+  );
+scene.add(sfmlDesc2);
+
+var seaSideDesc = initTextMesh(scene, proj,
+  proj.position.x-15,
+  proj.position.y+4.5,
+  proj.position.z+3,
+  proj.rotation.x,
+  proj.rotation.y,
+  0,
+  'Grand Theft Auto 5 Modded Server,',
+  0.6         
+  );
+scene.add(seaSideDesc);
+var seaSideDesc2 = initTextMesh(scene, proj,
+  proj.position.x-15,
+  proj.position.y+3.5,
+  proj.position.z+3,
+  proj.rotation.x,
+  proj.rotation.y,
+  0,
+  'Created with Lua and Javascript',
+  0.6         
+  );
+scene.add(seaSideDesc2);
+
+var controllerDesc = initTextMesh(scene, proj,
+  proj.position.x-15,
+  proj.position.y+0,
+  proj.position.z+3,
+  proj.rotation.x,
+  proj.rotation.y,
+  0,
+  'Program made to Test XINPUT Devices,',
+  0.6         
+  );
+scene.add(controllerDesc);
+var controllerDesc2 = initTextMesh(scene, proj,
+  proj.position.x-15,
+  proj.position.y-1,
+  proj.position.z+3,
+  proj.rotation.x,
+  proj.rotation.y,
+  0,
+  'Made using /sfml-gui, in C++',
+  0.6         
+  );
+scene.add(controllerDesc2);
+var clickerDesc = initTextMesh(scene, proj,
+  proj.position.x-15,
+  proj.position.y-4.5,
+  proj.position.z+3,
+  proj.rotation.x,
+  proj.rotation.y,
+  0,
+  'Powerful AutoClicker With Terminal Colors',
+  0.6         
+  );
+scene.add(clickerDesc);
+var clickerDesc2 = initTextMesh(scene, proj,
+  proj.position.x-15,
+  proj.position.y-5.5,
+  proj.position.z+3,
+  proj.rotation.x,
+  proj.rotation.y,
+  0,
+  'And Range-Based CPS, made in C++ ',
+  0.6         
+  );
+scene.add(clickerDesc2);
 
   function TextBoundingBox(scene, width = 14)
   {
@@ -390,7 +435,7 @@ let sfmlText;
           scene.add(sfmlText);
       });
 
-var sfmlDesc = Proj.initText();
+var sfmlDesc = initText();
 
 let seaSideBoundingBox = TextBoundingBox(scene, 25);
 let seaSideText;
@@ -463,41 +508,41 @@ let clickerText;
   desc.position.set(-29,-10,0);
   desc.rotation.set(0,0.4,0);
 
-  //var DescText = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+7.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-  //  'Hi, Im Clearly. im a c++ Developer,',
-  //  0.9         
-  //  );
-  //scene.add(DescText);
-  //var DescText2 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+6,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-  //  'with 4+ years experience',
-  //  0.9         
-  //  );
-  //scene.add(DescText2);
-  //var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+4.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-  //  'in a multitude of languages and',
-  //  0.9         
-  //  );
-  //scene.add(DescText3);
-  //var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+3,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-  //  'and tools, Right now i mainly',
-  //  0.9         
-  //  );
-  //scene.add(DescText3);
-  //var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+1.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-  //  'focus on framework development ',
-  //  0.9         
-  //  );
-  //scene.add(DescText3);
-  //var DescText3 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-  //  'and making games. Message me',
-  //  0.9         
-  //  );
-  //scene.add(DescText4);
-  //var DescText4 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y-1.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-  //  'if you need a developer!',
-  //  0.9         
-  //  );
-  //scene.add(DescText4);
+  var DescText = initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+7.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+    'Hi, Im Clearly. im a c++ Developer,',
+    0.9         
+    );
+  scene.add(DescText);
+  var DescText2 = initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+6,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+    'with 4+ years experience',
+    0.9         
+    );
+  scene.add(DescText2);
+  var DescText3 = initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+4.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+    'in a multitude of languages and',
+    0.9         
+    );
+  scene.add(DescText3);
+  var DescText3 = initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+3,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+    'and tools, Right now i mainly',
+    0.9         
+    );
+  scene.add(DescText3);
+  var DescText3 = initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y+1.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+    'focus on framework development ',
+    0.9         
+    );
+  scene.add(DescText3);
+  var DescText3 = initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+    'and making games. Message me',
+    0.9         
+    );
+  scene.add(DescText4);
+  var DescText4 = initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y-1.5,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+    'if you need a developer!',
+    0.9         
+    );
+  scene.add(DescText4);
   let twitterText;
       Fontloader.load('Gameplay_Regular.json', function (font) {
           const tGeometry = new TextGeometry('twitter:  devclearly', {
@@ -515,11 +560,11 @@ let clickerText;
           twitterText.rotation.z =  desc.rotation.z;
           scene.add(twitterText);
       });
-  //var DescText4 = Proj.initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y-8,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
-  //  'check out some of my projects!',
-  //  0.9         
-  //  );
-  //scene.add(DescText4);
+  var DescText4 = initTextMesh(scene, proj,desc.position.x-11.5,desc.position.y-8,desc.position.z+10,desc.rotation.x,desc.rotation.y,0,
+    'check out some of my projects!',
+    0.9         
+    );
+  scene.add(DescText4);
   window.addEventListener( 'resize', onWindowResize, false );
   
 function onWindowResize(){
@@ -583,7 +628,7 @@ function createCube(x,y,z, rot=0)
 //    createCube(j*10-50,-27,i*10-28);
 //  }
 //}
-
+//
 //for (var i = 0; i < 11; i++)
 //{
 //  for (var j = 0; j < 10; j++)
@@ -631,6 +676,45 @@ function scaleUpdate(enlarge, mesh)
     }
   }
 }
+
+
+
+sfmlTextBoundingBox.position.x =  proj.position.x-11;
+  sfmlTextBoundingBox.position.y =  proj.position.y+12;
+  sfmlTextBoundingBox.position.z =  proj.position.z+6;
+
+  sfmlTextBoundingBox.rotation.x =  proj.rotation.x;
+  sfmlTextBoundingBox.rotation.y =  proj.rotation.y;
+  sfmlTextBoundingBox.rotation.z =  proj.rotation.z;
+  
+  seaSideBoundingBox.position.x =  proj.position.x-6;
+  seaSideBoundingBox.position.y =  proj.position.y+7;
+  seaSideBoundingBox.position.z =  proj.position.z+10;
+
+  seaSideBoundingBox.rotation.x =  proj.rotation.x;
+  seaSideBoundingBox.rotation.y =  proj.rotation.y;
+  seaSideBoundingBox.rotation.z =  proj.rotation.z;
+
+  controllerBoundingBox.position.x =  proj.position.x-6;
+  controllerBoundingBox.position.y =  proj.position.y+2;
+  controllerBoundingBox.position.z =  proj.position.z+10;
+
+  controllerBoundingBox.rotation.x =  proj.rotation.x;
+  controllerBoundingBox.rotation.y =  proj.rotation.y;
+  controllerBoundingBox.rotation.z =  proj.rotation.z;
+
+  clickerBoundingBox.position.x =  proj.position.x-9;
+  clickerBoundingBox.position.y =  proj.position.y-2.4;
+  clickerBoundingBox.position.z =  proj.position.z+10;
+
+  clickerBoundingBox.rotation.x =  proj.rotation.x;
+  clickerBoundingBox.rotation.y =  proj.rotation.y;
+  clickerBoundingBox.rotation.z =  proj.rotation.z;
+
+
+
+
+
 bloomPass.strength = 4
 camera.position.z = 300
 camera.fov = 10;
@@ -675,52 +759,22 @@ function animate() {
   cube.rotation.z += 0.01;
   onMouseMove;
 
-  //sfmlTextBoundingBox.position.x =  proj.position.x-11;
-  //sfmlTextBoundingBox.position.y =  proj.position.y+12;
-  //sfmlTextBoundingBox.position.z =  proj.position.z+6;
-//
-  //sfmlTextBoundingBox.rotation.x =  proj.rotation.x;
-  //sfmlTextBoundingBox.rotation.y =  proj.rotation.y;
-  //sfmlTextBoundingBox.rotation.z =  proj.rotation.z;
-  //
-  //seaSideBoundingBox.position.x =  proj.position.x-6;
-  //seaSideBoundingBox.position.y =  proj.position.y+7;
-  //seaSideBoundingBox.position.z =  proj.position.z+10;
-//
-  //seaSideBoundingBox.rotation.x =  proj.rotation.x;
-  //seaSideBoundingBox.rotation.y =  proj.rotation.y;
-  //seaSideBoundingBox.rotation.z =  proj.rotation.z;
-//
-  //controllerBoundingBox.position.x =  proj.position.x-6;
-  //controllerBoundingBox.position.y =  proj.position.y+2;
-  //controllerBoundingBox.position.z =  proj.position.z+10;
-//
-  //controllerBoundingBox.rotation.x =  proj.rotation.x;
-  //controllerBoundingBox.rotation.y =  proj.rotation.y;
-  //controllerBoundingBox.rotation.z =  proj.rotation.z;
-//
-  //clickerBoundingBox.position.x =  proj.position.x-9;
-  //clickerBoundingBox.position.y =  proj.position.y-2.4;
-  //clickerBoundingBox.position.z =  proj.position.z+10;
-//
-  //clickerBoundingBox.rotation.x =  proj.rotation.x;
-  //clickerBoundingBox.rotation.y =  proj.rotation.y;
-  //clickerBoundingBox.rotation.z =  proj.rotation.z;
+  
 
-  //textCollider.position.x = sign.position.x+1;
-  //textCollider.position.y = sign.position.y;
-  //textCollider.position.z = sign.position.z+2;
-//
-  //textCollider.rotation.x = sign.rotation.x;
-  //textCollider.rotation.y = sign.rotation.y;
-  //textCollider.rotation.z = sign.rotation.z;
+  textCollider.position.x = sign.position.x+1;
+  textCollider.position.y = sign.position.y;
+  textCollider.position.z = sign.position.z+2;
 
-  //if (textmesh) {scaleUpdate(enlargeName, textmesh);}
-  //if (sfmlText){scaleUpdate(enlargeSfmlGUI, sfmlText);}
-  //if (seaSideText){scaleUpdate(enlargeSeaside, seaSideText);}
-  //if (controllerText){scaleUpdate(enlargeController, controllerText);}
-  //if (clickerText){scaleUpdate(enlargeClicker, clickerText);}
-  //if (twitterText){scaleUpdate(enlargeTwitter, twitterText);}
+  textCollider.rotation.x = sign.rotation.x;
+  textCollider.rotation.y = sign.rotation.y;
+  textCollider.rotation.z = sign.rotation.z;
+
+  if (textmesh) {scaleUpdate(enlargeName, textmesh);}
+  if (sfmlText){scaleUpdate(enlargeSfmlGUI, sfmlText);}
+  if (seaSideText){scaleUpdate(enlargeSeaside, seaSideText);}
+  if (controllerText){scaleUpdate(enlargeController, controllerText);}
+  if (clickerText){scaleUpdate(enlargeClicker, clickerText);}
+  if (twitterText){scaleUpdate(enlargeTwitter, twitterText);}
 
   for (var i = 0; i < 3; i++) {
     Cones[i].rotation.y += 0.01;
