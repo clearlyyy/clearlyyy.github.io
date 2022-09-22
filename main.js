@@ -576,13 +576,13 @@ function createCube(x,y,z, rot=0)
   return cube;
 }
 //INIT WALLS ->
-for (var i = 0; i < 22; i++)
-{
-  for (var j = 0; j < 11; j++)
-  {
-    createCube(j*10-50,-27,i*10-28);
-  }
-}
+//for (var i = 0; i < 22; i++)
+//{
+//  for (var j = 0; j < 11; j++)
+//  {
+//    createCube(j*10-50,-27,i*10-28);
+//  }
+//}
 
 //for (var i = 0; i < 11; i++)
 //{
