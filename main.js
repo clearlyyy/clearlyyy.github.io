@@ -4,8 +4,8 @@ import {RenderPass} from 'https://cdn.skypack.dev/three@0.132.0/examples/jsm/pos
 import {EffectComposer} from 'https://cdn.skypack.dev/three@0.132.0/examples/jsm/postprocessing/EffectComposer';
 import {UnrealBloomPass} from 'https://cdn.skypack.dev/three@0.132.0/examples/jsm/postprocessing/UnrealBloomPass';
 import json from "./particles.json" assert {type: "json"};
-import { FontLoader } from 'FontLoader';
-import { TextGeometry } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+import { FontLoader } from 'three';
+import { TextGeometry } from 'three';
 //import * as Proj from './ProjOBJ.js';
 //import Stats from 'three/examples/jsm/libs/stats.module'
 
